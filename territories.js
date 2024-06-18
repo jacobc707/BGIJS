@@ -1,5 +1,8 @@
 searchText = document.getElementById("searchText");
 findDiv = document.getElementById("find");
+detailsDiv = document.getElementById("detailsDiv");
+detailsDiv.style.zIndex = "-1";
+detailsDiv.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
 
 territories = {
   "Stanford Territory": "stanford",
@@ -20,20 +23,22 @@ territories = {
   "Southwest San Jose Territory": "southwestsjc",
 };
 
-function updateFind(textEntry) {
-  findDiv.innerHTML = ""
-  console.log(searchText.value)
-
+function updateFind() {
+  findDiv.innerHTML = "";
+  console.log(searchText.value);
 
   for (let territory in territories) {
     if (territory.toLowerCase().includes(searchText.value)) {
-
       territoryDiv = document.createElement("div");
       territoryDiv.setAttribute("class", "territory");
+      territoryDiv.setAttribute("onclick", "showDetails('" + territory + "')");
       findDiv.appendChild(territoryDiv);
 
       img = document.createElement("img");
-      img.setAttribute("src", "images/territoryOutlines/" + territories[territory]+".png");
+      img.setAttribute(
+        "src",
+        "images/territoryOutlines/" + territories[territory] + ".png"
+      );
       territoryDiv.appendChild(img);
 
       header = document.createElement("h2");
@@ -41,6 +46,36 @@ function updateFind(textEntry) {
       territoryDiv.appendChild(header);
     }
   }
+}
+
+function showDetails(detailItemClicked) {
+  console.log(detailItemClicked);
+  console.log(territories[detailItemClicked]);
+
+  details = document.createElement("div");
+  details.setAttribute("class", "details");
+  detailsDiv.appendChild(details);
+
+  detailsDiv.style.zIndex = "1";
+  detailsDiv.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+
+  detailsImg = document.createElement("img");
+  detailsImg.setAttribute(
+    "src",
+    "images/territoryOutlines/" + territories[detailItemClicked] + ".png"
+  );
+  details.appendChild(detailsImg);
+
+  detailsX = document.createElement("div");
+  detailsX.setAttribute("class", "detailsX");
+  details.appendChild(detailsX);
+  details.setAttribute("onclick", "hideDetails()");
+}
+
+function hideDetails() {
+  detailsDiv.style.zIndex = "-1";
+  detailsDiv.style.backgroundColor = "rgba(0, 0, 0, 0.0)";
+  details.remove();
 }
 
 updateFind(searchText.value);
