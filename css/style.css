@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    min-height: 100vh;
+}
+
+.topbar {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.topbar h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.topbar h1 span{
+    font-size: 1rem;
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: end;
+    height: 100%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.2s;
+}
+
+.navbar a:hover, .navbar a:focus {
+    color: rgb(220, 180, 131);
+    border-bottom: 2px solid rgb(220, 180, 131);
+}
+
+html main{
+    height: calc(100vh - 4rem)
+}
+
+/* //////////////////////////// */
+
+
+@media (min-width: 768px){
+    .mobile {
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    html main{
+        height: calc(100vh - 2.25rem)
+    }
+    .desktop{
+        display: none;
+    }
+
+    .topbar h1 {
+        font-size: 1.25rem;
+    }
+
+    .topbar h1 span{
+        font-size: 0.625rem;
+    }
+
+    .navbar {
+        gap: 0.7rem;
+        padding: 0.5 rem;
+    }
+    .navbar a{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 500px){
+    html main{
+        height: calc(100vh - 2rem)
+    }
+    .nontablet{
+        display: none;
+    }
+
+    .topbar{
+        justify-content: space-evenly;
+    }
+
+}

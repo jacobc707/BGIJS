@@ -1,0 +1,194 @@
+.team-image {
+    width: 8rem;
+    border-radius: 4rem;
+    border: 3px double black
+}
+
+.one{
+    grid-area: "one"
+}
+
+.two {
+    grid-area: "two"
+}
+
+.teambox {
+    padding: 1rem;
+}
+
+.profile {
+    display: grid;
+    place-content: center;
+}
+
+.teambox-flex{
+    display: flex;
+    gap: 5rem;
+}
+
+.teams {
+    margin: 5rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: "one two";
+}
+
+.teams h2, .teams img {
+    display: inline;
+    font-size: 2rem;
+}
+
+.teambox-teambox {
+    display: grid;
+    place-content: center;
+}
+
+.stats img{
+    width: 8rem;
+}
+
+.profile {
+    grid-area: "profile"
+}
+
+.stats {
+    grid-area: "stats";
+}
+
+.coins, .territories{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats h3{
+    font-size: 1.5rem;
+}
+
+.coins span{
+    font-weight: 10000000;
+    color: rgb(168, 142, 13)
+}
+
+.territories span{
+    font-weight: 10000000;
+    color: rgb(28, 105, 28)
+}
+
+.teambox {
+    display: grid;
+    grid-template-areas: "profile" "stats";
+}
+
+@media (min-width: 768px){
+    .stats{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+
+@media (min-width: 500px) and (max-width: 768px) {
+    .stats {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .teams {
+        margin: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: 
+        "one"
+        "two";
+    }
+
+    .coins img, .territories img {
+        width: 3rem;
+    }
+
+    .coins, .territories{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        place-content: end;
+        align-items: center;
+    }
+    
+    .profile {
+        display: block;
+    }
+
+    .teambox{
+        display: grid;
+        grid-template-areas: "profile stats";
+    }
+
+    .teambox-flex{
+        display: flex;
+        gap: 3rem;
+    }
+
+    .teams h2, .teams img {
+        display: inline;
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (max-width: 500px){
+    .stats{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .coins, .territories{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .coins img, .territories img {
+        width: 2rem;
+    }
+
+
+    .teams {
+        margin: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: 
+        "one"
+        "two";
+    }
+
+
+    .stats h3{
+        font-size: 1.5rem;
+    }
+    
+    .teambox-flex{
+        display: flex;
+        gap: 3rem;
+    }
+
+    .teams h2, .teams img {
+        display: inline;
+        font-size: 2rem;
+    }
+}
+
+.one {
+    background-color: rgb(255, 201, 180);
+}
+
+.two {
+    background-color: rgb(180, 239, 255);
+}
+
+/* let's say another distinction is roughly 600px*/

@@ -1,0 +1,82 @@
+iframe {
+    height: 100%;
+    width: 100%;
+}
+
+/* Small devices (portrait tablets, phones) */
+@media only screen and (max-width: 768px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and ((min-width: 768px) and (max-width: 992px)) {
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    main {
+        padding: 1rem;
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search label{
+        font-size: 1.5rem;
+    }
+
+    .search input{
+        padding: 0.5rem 0.5rem;;
+        display: inline-block;
+        width: 100%;
+        border: 0;
+        background-color: #ececec;
+        font-size: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .searchAndFind{
+        max-height: calc(100vh - 4rem)
+    }
+
+    .map{
+        max-height: calc(100vh - 2rem)
+    }
+
+
+    .find{
+        overflow-y: auto;
+        max-height: calc(100vh - 9rem);
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+
+    .territory {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 7rem;
+        background-color: #efefef;
+        padding: 0.5rem;
+        border-radius: 1rem;
+    }
+
+    .territory:hover, .territory:focus {
+        background-color: #dfdfdf
+    }
+
+    .territory img {
+        height: 10rem;
+    }
+
+    .territory h2{
+        font-size: 2rem;
+    }
+
+    html main{
+        max-height: calc(100vh - 4rem)
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGHIJet Lag</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transport.css">
+</head>
+<body>
+    <nav>
+        <div class="topbar">
+            <h1 class="desktop">BGHIJ<span>et Lag: the game</span></h1>
+            <h1 class="mobile nontablet">Jet Lag</span></h1>
+            <div class="navbar">
+                <a href="index.html">Rules</a>
+                <a href="teams.html">Teams</a>
+                <a href="territories.html">Territories</a>
+                <a href="#">Transport</a>
+                <a href="#">Tools</a>
+            </div>
+        </div>
+    </nav>
+    <div class="transport">
+        <h2>Transportation Calculator</h2>
+        <div class="entrybox">
+            <form action="">
+                <fieldset class="fieldsetter">
+                    <div class="radiobox">
+                        <div class="radiospecifics">
+                            <label for="trainradio">Train</label>
+                            <input type="radio" id="trainradio" name="moderadio">
+                        </div>
+                        <div class="radiospecifics">
+                            <label for="busradio">Bus</label>
+                            <input type="radio" id="busradio" name="moderadio">
+                        </div>
+                    </div>
+
+                    <div class="busbox" id="busbox">
+                        <label for="busmode">Choose your mode of Transport:</label>
+                        <select id="busmodelist" onchange="selected()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option id="AC" value="AC Transit"> AC Transit </option>
+                            <option id="BUS-ACE" value="ACE Shuttle"> ACE Shuttle </option>
+                            <option id="BUS-DB" value="DB Express"> DB Express </option>
+                            <option id="BUS-Marguerite" value="Marguerite"> Marguerite </option>
+                            <option id="BUS-MBgo" value="MVgo"> MVgo </option>
+                            <option id="BUS-MVCS" value="MVCS"> MVCS </option>
+                            <option id="BUS-SamsTrans" value="SamsTrans"> SamsTrans </option>
+                            <option id="BUS-VTA-local-infrequent" value="VTA Local Infrequent"> VTA Local Infrequent </option>
+                            <option id="BUS-VTA-local-frequent" value="VTA Local Frequent"> VTA Local Frequent </option>
+                            <option id="BUS-VTA-rapid-infrequent" value="VTA Rapid Infrequent"> VTA Rapid Inrequent </option>
+                            <option id="BUS-VTA-rapid-frequent" value="VTA Rapid Frequent"> VTA Rapid Frequent </option>
+                        </select>
+                    </div>
+                    
+                    <div class="trainbox" id="trainbox">
+                        <label for="trainmode">Choose your mode of Transport:</label>
+                        <select id="trainmodelist" onchange="selected()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option id="TRAIN-ACE" value="ACE"> ACE </option>
+                            <option id="TRAIN-Amtrak" value="Amtrak"> Amtrak </option>
+                            <option id="TRAIN-Caltrain-local" value="Caltrain - local"> Caltrain - local </option>
+                            <option id="TRAIN-Caltrain-limited" value="Caltrain - limited"> Caltrain - limited </option>
+                            <option id="TRAIN-Caltrain-BabyBullet" value="Caltrain - Baby Bullet"> Caltrain - Baby Bullet </option>
+                            <option id="TRAIN-VTA" value="VTA"> VTA </option>
+                        </select>
+                    </div>
+
+                    <div class="stopsbox hidden" id="stopsbox">
+                        <label for="stops">Number of local stations:</label>
+                        <input type="number" id="stops" name="stops"placeholder = "3" onchange="typed()" step="1" min="0">
+                    </div>
+
+                    <div class="milesbox hidden" id="milesbox">
+                        <label for="miles">Straight line distance (nearest mile):</label>
+                        <input type="number" id="miles" name="miles" placeholder = "18" onchange="typed()" step="1"
+                        min="0">
+                        <p> miles</p>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="costDisplay">
+            <img src="images/coin.png" alt="stack of coins icon">
+            <h3>Total Cost: <span id="costDisplayNumber">0</span> coins</h3>
+        </div>
+    </div>
+
+    <script src="transport.js"> </script>
+
+</body>
+</html>

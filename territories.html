@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGHIJet Lag</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/territories.css">
+</head>
+<body>
+    <nav>
+        <div class="topbar">
+            <h1 class="desktop">BGHIJ<span>et Lag: the game</span></h1>
+            <h1 class="mobile nontablet">Jet Lag</span></h1>
+            <div class="navbar">
+                <a href="index.html">Rules</a>
+                <a href="teams.html">Teams</a>
+                <a href="#">Territories</a>
+                <a href="transport.html">Transport</a>
+                <a href="#">Tools</a>
+            </div>
+        </div>
+        
+    </nav>
+    
+    <main>
+        <div class="map" >
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KT6aoRgbcXNlX1NUsA9TMiLCFVot_X4&ehbc=2E312F&noprof=1"></iframe>
+        </div>
+
+        <div class="searchAndFind">
+            <div class="search">
+                <input type="text" name="searchText" id="searchText" placeholder="Search for a territory or select from the list below:" onkeyup = "updateFind()">
+            </div>
+            <div class="find" id="find">
+                
+            </div>
+        </div>
+
+    </main>
+
+    <script src="territories.js"> </script>
+</body>
+</html>
