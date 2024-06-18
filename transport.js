@@ -22,17 +22,12 @@ var costDisplayNumber = document.getElementById('costDisplayNumber')
 
 var cost = 0;
 
-function display() {
-    console.log(cost)
-    costDisplayNumber.innerHTML = cost;
-}
-
 var costDictionary = {
     "VTA Local Infrequent" : 25,
     "VTA Local Frequent" : 40,
     "VTA Rapid Infrequent" : 60,
     "VTA Rapid Frequent" : 80,
-    "SamTrans" : 25,
+    "SamTrans" : 235,
     "AC Transit" : 25,
     "DB Express" : 25,
     "ACE Shuttle" : 25,
@@ -50,7 +45,20 @@ var costDictionary = {
 }
 
 
-function checkClick(){
+function radioChanged() {
+    console.log("radioChanged");
+    milesbox.classList.add("hidden")
+    stopsbox.classList.add("hidden")
+    busbox.classList.add("hidden")
+    trainbox.classList.add("hidden")
+    miles.value = ""
+    stops.value = ""
+    trainselector.value=""
+    busselector.value=""
+    costDisplayNumber.innerHTML = "---"
+
+
+
     if (trainradio.checked == true){
         trainbox.classList.remove("hidden")
     } else {
@@ -62,56 +70,70 @@ function checkClick(){
     } else {
         busbox.classList.add("hidden")
     }
-
-    display()
 }
 
-function selected(){
-    if (trainradio.checked==true){
-        selectedMOT = trainselector.value
-        gMOT = "train"
-        milesbox.classList.remove("visible")
-        milesbox.classList.add("hidden")
-        stopsbox.classList.remove("visible")
-        stopsbox.classList.add("hidden")
-    } else {
-        selectedMOT = busselector.value
-        gMOT = "bus"
-        stopsbox.classList.remove("visible")
-        stopsbox.classList.add("hidden")
-        milesbox.classList.remove("visible")
-        milesbox.classList.add("hidden")
-    }
-    
-    if (gMOT == "bus"){
-        milesbox.classList.remove("hidden")
-        milesbox.classList.add("visible")
-    } else {
+function selected() {
+    milesbox.classList.add("hidden")
+    stopsbox.classList.add("hidden")
+    miles.value = ""
+    stops.value = ""
+    costDisplayNumber.innerHTML = "---"
+
+    if (trainradio.checked == true){
         stopsbox.classList.remove("hidden")
-        stopsbox.classList.add("visible")
-    }
-
-    display()
-}
-
-function typed(){
-    if (trainradio.checked==true){
-        SoM = stops.value
     } else {
-        SoM = miles.value
+        stopsbox.classList.add("hidden")
     }
 
-    cost = costDictionary[selectedMOT] * SoM
-    
-    display()
+    if (busradio.checked == true){
+        milesbox.classList.remove("hidden")
+    } else {
+        milesbox.classList.add("hidden")
+    }
 }
 
-checkClick()
+function typed() {
+    if (allFieldsFilled()){
+        if (trainradio.checked == true){
+            selectedMOT = trainselector.value
+            console.log(trainselector.value)
+        }
+        if (busradio.checked == true){
+            selectedMOT = busselector.value
+        }
 
-document.addEventListener("click", checkClick)
+        displayCost()
 
-/*  function modeButton(){
-    if (((trainradio.checked==true)||(busradio.checked=true))&&(trainmode=="ACE")){
-        console.log("yes")
     }
-} */
+    else {
+        console.log("blah")
+    }
+}
+
+function allFieldsFilled(){
+    if (trainradio.checked || busradio.checked){
+        if (!(miles.value=="" && stops.value=="")){
+            return true;
+        }
+    }
+    return false;
+}
+
+function calculateCost(selectedMOT, multiplier){
+    console.log(selectedMOT)
+    console.log(multiplier)
+    return costDictionary[selectedMOT] * multiplier;
+}
+
+function displayCost(){
+    if (trainradio.checked==true){
+        sm = stops.value
+    }
+    if (busradio.checked==true){
+        sm = miles.value
+    }
+
+    costDisplayNumber.innerHTML = calculateCost(selectedMOT, sm)
+}
+
+radioChanged()

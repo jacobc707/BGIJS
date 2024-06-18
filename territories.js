@@ -28,7 +28,7 @@ function updateFind() {
   console.log(searchText.value);
 
   for (let territory in territories) {
-    if (territory.toLowerCase().includes(searchText.value)) {
+    if (territory.toLowerCase().includes(searchText.value.toLowerCase())) {
       territoryDiv = document.createElement("div");
       territoryDiv.setAttribute("class", "territory");
       territoryDiv.setAttribute("onclick", "showDetails('" + territory + "')");

@@ -30,11 +30,11 @@
                     <div class="radiobox">
                         <div class="radiospecifics">
                             <label for="trainradio">Train</label>
-                            <input type="radio" id="trainradio" name="moderadio">
+                            <input type="radio" id="trainradio" name="moderadio" onclick = "radioChanged()">
                         </div>
                         <div class="radiospecifics">
                             <label for="busradio">Bus</label>
-                            <input type="radio" id="busradio" name="moderadio">
+                            <input type="radio" id="busradio" name="moderadio" onclick = "radioChanged()">
                         </div>
                     </div>
 
@@ -59,7 +59,7 @@
                     <div class="trainbox" id="trainbox">
                         <label for="trainmode">Choose your mode of Transport:</label>
                         <select id="trainmodelist" onchange="selected()">
-                            <option disabled selected value> -- select an option -- </option>
+                            <option disabled selected value="disabled"> -- select an option -- </option>
                             <option id="TRAIN-ACE" value="ACE"> ACE </option>
                             <option id="TRAIN-Amtrak" value="Amtrak"> Amtrak </option>
                             <option id="TRAIN-Caltrain-local" value="Caltrain - local"> Caltrain - local </option>
@@ -71,12 +71,12 @@
 
                     <div class="stopsbox hidden" id="stopsbox">
                         <label for="stops">Number of local stations:</label>
-                        <input type="number" id="stops" name="stops"placeholder = "3" onchange="typed()" step="1" min="0">
+                        <input type="number" id="stops" name="stops"placeholder = "3" onkeyup="typed()" step="1" min="0">
                     </div>
 
                     <div class="milesbox hidden" id="milesbox">
                         <label for="miles">Straight line distance (nearest mile):</label>
-                        <input type="number" id="miles" name="miles" placeholder = "18" onchange="typed()" step="1"
+                        <input type="number" id="miles" name="miles" placeholder = "18" onkeyup="typed()" step="1"
                         min="0">
                         <p> miles</p>
                     </div>
