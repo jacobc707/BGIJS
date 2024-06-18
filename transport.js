@@ -27,7 +27,7 @@ var costDictionary = {
     "VTA Local Frequent" : 40,
     "VTA Rapid Infrequent" : 60,
     "VTA Rapid Frequent" : 80,
-    "SamTrans" : 235,
+    "SamsTrans" : 235,
     "AC Transit" : 25,
     "DB Express" : 25,
     "ACE Shuttle" : 25,
