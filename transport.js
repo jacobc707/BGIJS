@@ -23,25 +23,25 @@ var costDisplayNumber = document.getElementById('costDisplayNumber')
 var cost = 0;
 
 var costDictionary = {
-    "VTA Local Infrequent" : 25,
-    "VTA Local Frequent" : 40,
-    "VTA Rapid Infrequent" : 60,
-    "VTA Rapid Frequent" : 80,
-    "SamsTrans" : 235,
-    "AC Transit" : 25,
-    "DB Express" : 25,
-    "ACE Shuttle" : 25,
-    "Marguerite" : 35,
-    "MVgo" : 25,
-    "MVCS" : 25,
-    "ACE Shuttle" : 25,
+    "VTA Local Infrequent" : 100,
+    "VTA Local Frequent" : 160,
+    "VTA Rapid Infrequent" : 240,
+    "VTA Rapid Frequent" : 320,
+    "SamsTrans" : 100,
+    "AC Transit" : 100,
+    "DB Express" : 100,
+    "Marguerite" : 140,
+    "MVgo" : 100,
+    "MVCS" : 100,
+    "ACE Shuttle" : 100,
 
-    "VTA" : 40,
-    "Caltrain - local" : 150,
-    "Caltrain - limited" : 180,
-    "Caltrain - Baby Bullet" : 210,
-    "ACE" : 140,
-    "Amtrak" : 140
+    "VTA - Orange" : 160,
+    "VTA - GreenBlue" : 200,
+    "Caltrain - local" : 500,
+    "Caltrain - limited" : 600,
+    "Caltrain - Baby Bullet" : 700,
+    "ACE" : 650,
+    "Amtrak" : 650
 }
 
 

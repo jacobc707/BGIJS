@@ -59,19 +59,21 @@
                     <div class="trainbox" id="trainbox">
                         <label for="trainmode">Choose your mode of Transport:</label>
                         <select id="trainmodelist" onchange="selected()">
-                            <option disabled selected value="disabled"> -- select an option -- </option>
+                            <option disabled selected value> -- select an option -- </option>
                             <option id="TRAIN-ACE" value="ACE"> ACE </option>
                             <option id="TRAIN-Amtrak" value="Amtrak"> Amtrak </option>
                             <option id="TRAIN-Caltrain-local" value="Caltrain - local"> Caltrain - local </option>
                             <option id="TRAIN-Caltrain-limited" value="Caltrain - limited"> Caltrain - limited </option>
                             <option id="TRAIN-Caltrain-BabyBullet" value="Caltrain - Baby Bullet"> Caltrain - Baby Bullet </option>
-                            <option id="TRAIN-VTA" value="VTA"> VTA </option>
+                            <option id="TRAIN-VTA" value="VTA - Orange"> VTA Orange Line</option>
+                            <option id="TRAIN-VTA" value="VTA - GreenBlue"> VTA Blue Line</option>
+                            <option id="TRAIN-VTA" value="VTA - GreenBlue"> VTA Green Line</option>
                         </select>
                     </div>
 
                     <div class="stopsbox hidden" id="stopsbox">
                         <label for="stops">Number of local stations:</label>
-                        <input type="number" id="stops" name="stops"placeholder = "3" onkeyup="typed()" step="1" min="0">
+                        <input type="number" id="stops" name="stops" placeholder = "3" onkeyup="typed()" step="1" min="0">
                     </div>
 
                     <div class="milesbox hidden" id="milesbox">
