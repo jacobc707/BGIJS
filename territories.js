@@ -40,7 +40,6 @@ function updateFind() {
         "images/territoryOutlines/" + territories[territory] + ".png"
       );
       territoryDiv.appendChild(img);
-
       header = document.createElement("h2");
       header.innerHTML = territory;
       territoryDiv.appendChild(header);
@@ -58,13 +57,29 @@ function showDetails(detailItemClicked) {
 
   detailsDiv.style.zIndex = "1";
   detailsDiv.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  
+
+  detailsHead = document.createElement("div");
+  detailsHead.setAttribute("class", "detailsHead");
+  details.appendChild(detailsHead);
 
   detailsImg = document.createElement("img");
   detailsImg.setAttribute(
     "src",
     "images/territoryOutlines/" + territories[detailItemClicked] + ".png"
   );
-  details.appendChild(detailsImg);
+  detailsHead.appendChild(detailsImg);
+
+  detailsHeadHeader = document.createElement("h2");
+  detailsHeadHeader.innerHTML = detailItemClicked;
+  detailsHead.appendChild(detailsHeadHeader);
+
+
+  detailsBody = document.createElement("div");
+  detailsBody.setAttribute("class", "detailsBody");
+  details.appendChild(detailsBody);
+
+  createDetailsBody();
 
   detailsX = document.createElement("div");
   detailsX.setAttribute("class", "detailsX");
@@ -79,3 +94,20 @@ function hideDetails() {
 }
 
 updateFind(searchText.value);
+
+function createDetailsBody(){
+  detailsInfo = document.createElement("div")
+  detailsBAndC = document.createElement("div")
+
+  detailsInfo.setAttribute("class", "detailsInfo")
+  detailsInfo.setAttribute("class", "detailsBAndC")
+
+  detailsBody.appendChild(detailsInfo);
+  detailsBody.appendChild(detailsBAndC);
+
+  createDetailsInfo();
+}
+
+function createDetailsInfo(){
+  detailsInfoOrder = [""]
+}
