@@ -75,8 +75,6 @@ function radioChanged() {
 function selected() {
     milesbox.classList.add("hidden")
     stopsbox.classList.add("hidden")
-    miles.value = ""
-    stops.value = ""
     costDisplayNumber.innerHTML = "---"
 
     if (trainradio.checked == true){
@@ -89,6 +87,19 @@ function selected() {
         milesbox.classList.remove("hidden")
     } else {
         milesbox.classList.add("hidden")
+    }
+
+    if (allFieldsFilled()){
+        if (trainradio.checked == true){
+            selectedMOT = trainselector.value
+            console.log(trainselector.value)
+        }
+        if (busradio.checked == true){
+            selectedMOT = busselector.value
+        }
+
+        displayCost()
+
     }
 }
 

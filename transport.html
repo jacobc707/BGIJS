@@ -73,12 +73,12 @@
 
                     <div class="stopsbox hidden" id="stopsbox">
                         <label for="stops">Number of local stations:</label>
-                        <input type="number" id="stops" name="stops" placeholder = "3" onkeyup="typed()" step="1" min="0">
+                        <input type="number" id="stops" name="stops" placeholder = "3" onkeyup="typed()" onchange="typed()" step="1" min="0">
                     </div>
 
                     <div class="milesbox hidden" id="milesbox">
                         <label for="miles">Straight line distance (nearest mile):</label>
-                        <input type="number" id="miles" name="miles" placeholder = "18" onkeyup="typed()" step="1"
+                        <input type="number" id="miles" name="miles" placeholder = "18" onkeyup="typed()" onchange="typed()" step="1"
                         min="0">
                         <p> miles</p>
                     </div>
